@@ -1,0 +1,8 @@
+Dataset,Method,MAE(m),RMSE(m),R@1m(%),R@2m(%)
+KITTI-TS,GeoLocating [7],3.98,6.27,11.86,22.03
+KITTI-TS,GeoLocating+NSAL,3.80,5.92,15.25,27.12
+KITTI-TS,AutoTS (ours),2.38,3.42,30.51,54.23
+Aalborg,GeoLocating [7],5.88,7.07,3.57,8.93
+Aalborg,GeoLocating+NSAL,5.34,6.49,5.36,10.71
+Aalborg,GeoLocating-D [7],5.12,5.92,7.14,12.50
+Aalborg,GeoLocating-D+NSAL,4.90,5.65,10.71,16.07

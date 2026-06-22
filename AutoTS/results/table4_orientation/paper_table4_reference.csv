@@ -1,0 +1,9 @@
+Method,Accuracy,Recall_Left,Recall_Back,Recall_Right,mRecall
+AutoTS w/ ROI,71.43,12.50,91.30,22.22,42.01
+AutoTS w/ ROIS,73.02,37.50,84.78,44.44,55.57
+AutoTS w/o SIFT,76.19,37.50,89.13,44.44,62.38
+AutoTS w/o MImg,80.95,50.00,89.13,66.67,68.60
+AutoTS w/ BiLSTMs,82.54,62.50,91.30,55.56,69.79
+AutoTS w/ LSTMs,82.54,50.00,93.48,55.56,67.07
+AutoTS (ours),85.71,50.00,95.65,66.67,70.77
+AutoTS†,88.89,75.00,95.65,66.67,79.11

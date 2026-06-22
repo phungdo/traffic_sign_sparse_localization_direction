@@ -1,0 +1,34 @@
+TIMING REPORT — All Experiments
+==================================================
+Hardware:          Apple M-series (MPS)
+Dataset:           KITTI-TS (290 signs, 2387 images)
+
+LOCALIZATION (Table II — eval_table2_localization.py)
+==================================================
+Method                    Total(s)   ms/sign
+--------------------------------------------
+GeoLocating [7]              0.17      0.6
+GeoLocating+NSAL             0.11      0.4
+AutoTS (PlaneDepth+NSAL)    13.27     48.2
+DBSCAN hyperparam search     7.30       —
+
+Note: AutoTS is slower because it reads PlaneDepth
+depth maps from disk (2387 x 375x1242 arrays).
+Thin-lens methods compute depth from a formula.
+
+TRAINING (v2 paper params — orientation_train.py)
+==================================================
+Total wall time:        ~12 min (estimated from task log)
+  Data loading:         ~5-6 min (227 train + 63 test signs)
+    - Image loading:    ~32s (train), ~8s (test)
+    - Feature extraction (ResNet, ROI, SIFT): ~4 min
+    - Depth map loading: ~30s
+  Training (300 epochs): ~5-6 min
+    - Avg epoch time:   ~0.4s (29 batches × 8 samples)
+    - Throughput:       ~550 signs/s (forward+backward)
+  Evaluation per epoch: ~0.06s (8 batches)
+
+Note: Exact per-phase timings will be captured on
+the next training run with the updated instrumented
+script. The above estimates are derived from task
+logs (task-502) and tqdm progress bars.

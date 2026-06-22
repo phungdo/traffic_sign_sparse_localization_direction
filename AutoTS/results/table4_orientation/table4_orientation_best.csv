@@ -1,0 +1,9 @@
+Method,Accuracy,Recall_Left,Recall_Back,Recall_Right,mRecall,Checkpoint,Seconds
+AutoTS w/ ROI,84.13,50.00,97.83,44.44,64.09,./results/table4_orientation/AutoTS_w_ROI_best.pth,97.0
+AutoTS w/ ROIS,85.71,75.00,95.65,44.44,71.70,./results/table4_orientation/AutoTS_w_ROIS_best.pth,373.6
+AutoTS w/o SIFT,80.95,75.00,93.48,22.22,63.57,./results/table4_orientation/AutoTS_wo_SIFT_best.pth,366.4
+AutoTS w/o MImg,84.13,62.50,93.48,55.56,70.51,./results/table4_orientation/AutoTS_wo_MImg_best.pth,368.2
+AutoTS w/ BiLSTMs,84.13,37.50,93.48,77.78,69.59,./results/table4_orientation/AutoTS_w_BiLSTMs_best.pth,339.0
+AutoTS w/ LSTMs,82.54,62.50,91.30,55.56,69.79,./results/table4_orientation/AutoTS_w_LSTMs_best.pth,324.2
+AutoTS (ours),77.78,50.00,89.13,44.44,61.19,./results/table4_orientation/AutoTS_ours_best.pth,371.6
+AutoTS†,79.37,75.00,91.30,22.22,62.84,./results/table4_orientation/AutoTS†_best.pth,375.8

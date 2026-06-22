@@ -1,0 +1,7 @@
+cue,formula,mae,rmse,r1m,r2m
+NSAL (reference),graph density + MinCut,2.359,3.525,38.55,62.55
+none,q_i = 1 (degree-weighted center),2.364,3.523,38.18,62.55
+depth,q_i = exp(-lambda_d * depth),2.352,3.538,38.55,63.27
+area,q_i = normalized bbox area,2.38,3.697,39.64,62.18
+area_depth,q_i = area * exp(-lambda_d * depth),2.384,3.725,39.64,62.18
+conf_area_depth,q_i = conf * area * exp(-lambda_d * depth),2.384,3.725,39.64,62.18

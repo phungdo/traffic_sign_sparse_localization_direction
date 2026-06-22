@@ -1,0 +1,4 @@
+DBSCAN best params: eps=2.0, min_samples=1
+NSAL sigma: 2.5
+Sparse threshold: <10 location points
+Depth method: PlaneDepth (all variants)

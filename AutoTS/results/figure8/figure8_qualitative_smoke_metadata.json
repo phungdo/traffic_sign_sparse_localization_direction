@@ -1,0 +1,60 @@
+{
+  "output": "./results/figure8/figure8_qualitative_smoke.png",
+  "cache_dir": "./results/orientation_cache",
+  "orientation_ckpt": "./results/table4_orientation_smoke/AutoTS_ours_best.pth",
+  "map_rendering": "projected-coordinate fallback, not remote map tiles",
+  "rows": [
+    {
+      "index": 1,
+      "split": "train",
+      "sign_id": "3",
+      "selection_reason": "paper GPS-caption match",
+      "category": 4,
+      "gt_direction": 1,
+      "pred_direction": 1,
+      "ablation": "AutoTS w/o MinCut",
+      "autots_error_m": 9.921726499789187,
+      "ablation_error_m": 9.921726499789187,
+      "num_location_points": 1
+    },
+    {
+      "index": 2,
+      "split": "test",
+      "sign_id": "2",
+      "selection_reason": "fallback for missing paper ID train/274",
+      "category": 4,
+      "gt_direction": 2,
+      "pred_direction": 1,
+      "ablation": "AutoTS w/o MinCut",
+      "autots_error_m": 0.7681474203633113,
+      "ablation_error_m": 0.7681474203633113,
+      "num_location_points": 1
+    },
+    {
+      "index": 3,
+      "split": "test",
+      "sign_id": "5",
+      "selection_reason": "fallback because paper ID test/2 was already used",
+      "category": 15,
+      "gt_direction": 1,
+      "pred_direction": 1,
+      "ablation": "AutoTS w/o Weight",
+      "autots_error_m": 0.47022598350205347,
+      "ablation_error_m": 0.47452258201148717,
+      "num_location_points": 10
+    },
+    {
+      "index": 4,
+      "split": "test",
+      "sign_id": "6",
+      "selection_reason": "fallback unused sample because selected row 4 was already used",
+      "category": 4,
+      "gt_direction": 1,
+      "pred_direction": 1,
+      "ablation": "AutoTS w/o Weight",
+      "autots_error_m": 3.173901910530471,
+      "ablation_error_m": 3.173901910530471,
+      "num_location_points": 1
+    }
+  ]
+}

@@ -1,0 +1,3042 @@
+{
+  "AutoTS w/ ROI": [
+    {
+      "split": "test",
+      "sign_id": "2",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "5",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "6",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "8",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "11",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "14",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "19",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "20",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "23",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "32",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "33",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "35",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "38",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "44",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "53",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "56",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "59",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "65",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "77",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "78",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "79",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "80",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "83",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "86",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "92",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "95",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "101",
+      "label": 0,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "104",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "107",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "110",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "113",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "116",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "123",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "128",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "129",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "131",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "134",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "135",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "137",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "140",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "152",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "155",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "161",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "162",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "167",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "179",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "180",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "181",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "182",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "188",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "194",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "203",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "212",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "227",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "228",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "230",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "231",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "234",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "239",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "286",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "287",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "288",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "289",
+      "label": 0,
+      "pred": 2
+    }
+  ],
+  "AutoTS w/ ROIS": [
+    {
+      "split": "test",
+      "sign_id": "2",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "5",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "6",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "8",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "11",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "14",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "19",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "20",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "23",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "32",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "33",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "35",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "38",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "44",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "53",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "56",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "59",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "65",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "77",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "78",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "79",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "80",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "83",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "86",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "92",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "95",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "101",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "104",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "107",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "110",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "113",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "116",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "123",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "128",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "129",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "131",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "134",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "135",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "137",
+      "label": 1,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "140",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "152",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "155",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "161",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "162",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "167",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "179",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "180",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "181",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "182",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "188",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "194",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "203",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "212",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "227",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "228",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "230",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "231",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "234",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "239",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "286",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "287",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "288",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "289",
+      "label": 0,
+      "pred": 0
+    }
+  ],
+  "AutoTS w/o SIFT": [
+    {
+      "split": "test",
+      "sign_id": "2",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "5",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "6",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "8",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "11",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "14",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "19",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "20",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "23",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "32",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "33",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "35",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "38",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "44",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "53",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "56",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "59",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "65",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "77",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "78",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "79",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "80",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "83",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "86",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "92",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "95",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "101",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "104",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "107",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "110",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "113",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "116",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "123",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "128",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "129",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "131",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "134",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "135",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "137",
+      "label": 1,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "140",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "152",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "155",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "161",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "162",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "167",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "179",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "180",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "181",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "182",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "188",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "194",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "203",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "212",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "227",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "228",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "230",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "231",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "234",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "239",
+      "label": 1,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "286",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "287",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "288",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "289",
+      "label": 0,
+      "pred": 0
+    }
+  ],
+  "AutoTS w/o MImg": [
+    {
+      "split": "test",
+      "sign_id": "2",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "5",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "6",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "8",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "11",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "14",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "19",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "20",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "23",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "32",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "33",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "35",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "38",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "44",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "53",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "56",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "59",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "65",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "77",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "78",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "79",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "80",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "83",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "86",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "92",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "95",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "101",
+      "label": 0,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "104",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "107",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "110",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "113",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "116",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "123",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "128",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "129",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "131",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "134",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "135",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "137",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "140",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "152",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "155",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "161",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "162",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "167",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "179",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "180",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "181",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "182",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "188",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "194",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "203",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "212",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "227",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "228",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "230",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "231",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "234",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "239",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "286",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "287",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "288",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "289",
+      "label": 0,
+      "pred": 0
+    }
+  ],
+  "AutoTS w/ BiLSTMs": [
+    {
+      "split": "test",
+      "sign_id": "2",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "5",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "6",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "8",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "11",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "14",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "19",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "20",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "23",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "32",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "33",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "35",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "38",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "44",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "53",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "56",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "59",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "65",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "77",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "78",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "79",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "80",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "83",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "86",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "92",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "95",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "101",
+      "label": 0,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "104",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "107",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "110",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "113",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "116",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "123",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "128",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "129",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "131",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "134",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "135",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "137",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "140",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "152",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "155",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "161",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "162",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "167",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "179",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "180",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "181",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "182",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "188",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "194",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "203",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "212",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "227",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "228",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "230",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "231",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "234",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "239",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "286",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "287",
+      "label": 0,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "288",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "289",
+      "label": 0,
+      "pred": 2
+    }
+  ],
+  "AutoTS w/ LSTMs": [
+    {
+      "split": "test",
+      "sign_id": "2",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "5",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "6",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "8",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "11",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "14",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "19",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "20",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "23",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "32",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "33",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "35",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "38",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "44",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "53",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "56",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "59",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "65",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "77",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "78",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "79",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "80",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "83",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "86",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "92",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "95",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "101",
+      "label": 0,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "104",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "107",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "110",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "113",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "116",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "123",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "128",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "129",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "131",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "134",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "135",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "137",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "140",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "152",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "155",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "161",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "162",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "167",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "179",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "180",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "181",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "182",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "188",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "194",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "203",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "212",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "227",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "228",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "230",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "231",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "234",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "239",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "286",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "287",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "288",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "289",
+      "label": 0,
+      "pred": 0
+    }
+  ],
+  "AutoTS (ours)": [
+    {
+      "split": "test",
+      "sign_id": "2",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "5",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "6",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "8",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "11",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "14",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "19",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "20",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "23",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "32",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "33",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "35",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "38",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "44",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "53",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "56",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "59",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "65",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "77",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "78",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "79",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "80",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "83",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "86",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "92",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "95",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "101",
+      "label": 0,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "104",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "107",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "110",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "113",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "116",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "123",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "128",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "129",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "131",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "134",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "135",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "137",
+      "label": 1,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "140",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "152",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "155",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "161",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "162",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "167",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "179",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "180",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "181",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "182",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "188",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "194",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "203",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "212",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "227",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "228",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "230",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "231",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "234",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "239",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "286",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "287",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "288",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "289",
+      "label": 0,
+      "pred": 1
+    }
+  ],
+  "AutoTS\u2020": [
+    {
+      "split": "test",
+      "sign_id": "2",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "5",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "6",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "8",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "11",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "14",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "19",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "20",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "23",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "32",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "33",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "35",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "38",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "44",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "53",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "56",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "59",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "65",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "77",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "78",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "79",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "80",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "83",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "86",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "92",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "95",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "101",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "104",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "107",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "110",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "113",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "116",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "123",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "128",
+      "label": 2,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "129",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "131",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "134",
+      "label": 1,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "135",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "137",
+      "label": 1,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "140",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "152",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "155",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "161",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "162",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "167",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "179",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "180",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "181",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "182",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "188",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "194",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "203",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "212",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "227",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "228",
+      "label": 0,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "230",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "231",
+      "label": 1,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "234",
+      "label": 2,
+      "pred": 1
+    },
+    {
+      "split": "test",
+      "sign_id": "239",
+      "label": 1,
+      "pred": 2
+    },
+    {
+      "split": "test",
+      "sign_id": "286",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "287",
+      "label": 0,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "288",
+      "label": 2,
+      "pred": 0
+    },
+    {
+      "split": "test",
+      "sign_id": "289",
+      "label": 0,
+      "pred": 0
+    }
+  ]
+}

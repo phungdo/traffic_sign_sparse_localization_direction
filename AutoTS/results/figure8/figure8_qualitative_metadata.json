@@ -1,0 +1,121 @@
+{
+  "output": "./results/figure8/figure8_qualitative.png",
+  "web_data_output": "./results/figure8/figure8_web_data.json",
+  "cache_dir": "./results/orientation_cache",
+  "orientation_ckpt": "./results/table4_orientation/AutoTS_ours_best.pth",
+  "map_rendering": {
+    "gt_gps_location": "Google satellite tiles, lyrs=s",
+    "estimated_location": "Google road map tiles, lyrs=m",
+    "preferred_zoom": 20,
+    "fallback_zoom": 18,
+    "gt_min_side_m": 80.0,
+    "estimated_min_side_m": 120.0
+  },
+  "paper_reference_note": "Rendered predictions and errors are recomputed from the current cache/checkpoint. Paper values are stored for comparison only.",
+  "rows": [
+    {
+      "index": 1,
+      "split": "train",
+      "sign_id": "3",
+      "selection_reason": "paper specified sample",
+      "category": 4,
+      "gt_direction": 1,
+      "pred_direction": 1,
+      "ablation": "AutoTS w/o MinCut",
+      "paper_reference": {
+        "sign_label": "Yield",
+        "gt_direction": 1,
+        "pred_direction": 1,
+        "autots_error_m": 2.15,
+        "ablation_error_m": 3.39,
+        "caption_geolocation": [
+          49.00888888888889,
+          8.439444444444444
+        ]
+      },
+      "matches_paper_sample": true,
+      "paper_deviation": "AutoTS error differs from paper 2.15 m; ablation error differs from paper 3.39 m",
+      "autots_error_m": 3.0899193576187245,
+      "ablation_error_m": 3.0899193576187245,
+      "num_location_points": 14
+    },
+    {
+      "index": 2,
+      "split": "train",
+      "sign_id": "274",
+      "selection_reason": "paper specified sample",
+      "category": 3,
+      "gt_direction": 1,
+      "pred_direction": 1,
+      "ablation": "AutoTS w/o MinCut",
+      "paper_reference": {
+        "sign_label": "RoadWork",
+        "gt_direction": 1,
+        "pred_direction": 1,
+        "autots_error_m": 1.57,
+        "ablation_error_m": 1.57,
+        "caption_geolocation": [
+          48.94911111111111,
+          8.488694444444443
+        ]
+      },
+      "matches_paper_sample": true,
+      "paper_deviation": "AutoTS error differs from paper 1.57 m; ablation error differs from paper 1.57 m",
+      "autots_error_m": 1.1601361912196417,
+      "ablation_error_m": 1.1601361912196417,
+      "num_location_points": 17
+    },
+    {
+      "index": 3,
+      "split": "test",
+      "sign_id": "2",
+      "selection_reason": "paper specified sample",
+      "category": 4,
+      "gt_direction": 2,
+      "pred_direction": 0,
+      "ablation": "AutoTS w/o Weight",
+      "paper_reference": {
+        "sign_label": "Yield",
+        "gt_direction": 2,
+        "pred_direction": 2,
+        "autots_error_m": 0.85,
+        "ablation_error_m": 1.13,
+        "caption_geolocation": [
+          49.010888888888886,
+          8.423333333333332
+        ]
+      },
+      "matches_paper_sample": true,
+      "paper_deviation": "prediction differs from paper (Rightward); ablation error differs from paper 1.13 m",
+      "autots_error_m": 0.8256942638657968,
+      "ablation_error_m": 0.8232658211857367,
+      "num_location_points": 8
+    },
+    {
+      "index": 4,
+      "split": "train",
+      "sign_id": "174",
+      "selection_reason": "paper specified sample",
+      "category": 7,
+      "gt_direction": 1,
+      "pred_direction": 1,
+      "ablation": "AutoTS w/o Weight",
+      "paper_reference": {
+        "sign_label": "NoStay",
+        "gt_direction": 1,
+        "pred_direction": 2,
+        "autots_error_m": 0.81,
+        "ablation_error_m": 0.88,
+        "caption_geolocation": [
+          48.983555555555554,
+          8.401916666666667
+        ]
+      },
+      "matches_paper_sample": true,
+      "paper_deviation": "prediction differs from paper (Rightward); ablation error differs from paper 0.88 m",
+      "autots_error_m": 0.8160747969064478,
+      "ablation_error_m": 0.8156189236308168,
+      "num_location_points": 7
+    }
+  ]
+}

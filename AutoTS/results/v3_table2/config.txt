@@ -1,0 +1,6 @@
+DBSCAN best params: eps=1.0, min_samples=5
+Focal length: 721.5377 px
+Default sign height: 0.6 m
+Sign heights: {0: 0.6, 1: 0.6, 2: 0.6, 3: 0.6, 4: 0.9, 5: 0.6, 6: 0.6, 7: 0.6, 8: 0.6, 9: 0.42, 10: 0.42, 11: 0.42, 12: 0.6, 13: 0.6, 14: 0.6, 15: 0.6}
+NSAL sigma: 2.5
+CENTER_X: 621, FOV_X: 45

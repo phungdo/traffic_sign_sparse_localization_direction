@@ -1,0 +1,23 @@
+{
+  "output": "./results/figure7/figure7_sift_heatmaps_smoke.png",
+  "cache": "./results/orientation_cache/test_features_limit8.pt",
+  "backward_id": "5",
+  "rightward_id": "2",
+  "backward_original_rows": 10,
+  "rightward_original_rows": 1,
+  "backward_selected_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "rightward_selected_indices": [
+    0
+  ]
+}

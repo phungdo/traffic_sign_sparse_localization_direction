@@ -1,0 +1,9 @@
+Method,MAE(m),RMSE(m),R@1m(%),R@2m(%),N_signs,Time(s),ms/sign
+GeoLocating [7],4.26,5.68,15.27,35.64,275,0.20,0.7
+GeoLocating+NSAL,4.28,5.70,13.09,35.64,275,0.12,0.4
+AutoTS (ours),2.36,3.53,38.55,62.55,275,15.19,55.2
+
+--- Paper Reference ---
+GeoLocating [7] (paper),3.98,6.27,11.86,22.03,
+GeoLocating+NSAL (paper),3.80,5.92,15.25,27.12,
+AutoTS (paper),2.38,3.42,30.51,54.23,

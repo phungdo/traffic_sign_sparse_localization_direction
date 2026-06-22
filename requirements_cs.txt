@@ -1,0 +1,10 @@
+# Dependencies for the compressed-sensing localization module
+# (AutoTS/sparse_localization). No GPU and no PyTorch needed.
+numpy
+scipy
+scikit-learn
+pandas
+matplotlib
+pyproj
+shapely
+geopy

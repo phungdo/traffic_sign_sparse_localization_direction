@@ -1,0 +1,59 @@
+# ---- macOS / editor junk ----
+.DS_Store
+**/.DS_Store
+Icon
+Icon?
+**/Icon*
+*.swp
+.ipynb_checkpoints/
+
+# ---- Python ----
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# ---- Large model weights & data (cannot go to GitHub: >100 MB/file) ----
+*.pth
+*.pt
+*.npz
+*.npy
+*.zip
+*.ckpt
+*.h5
+*.bin
+
+# ---- Datasets / caches (KITTI-TS GT JSONs are force-added separately) ----
+AutoTS/KITTI-TS/
+AutoTS/datasets/
+AutoTS/data/
+AutoTS/results/orientation_cache/
+PlaneDepth/log/
+
+# ---- Vendored third-party source (install separately if reproducing) ----
+AutoTS/detectron2/
+# Embedded git repos (have their own .git); not needed for the CS demo.
+PlaneDepth
+PlaneDepth/
+AutoTS_src
+AutoTS_src/
+
+# ---- Third-party tool, extracted bundle, and paper text (copyright) ----
+skill-deslop-main/
+demo_packet_*/
+paper_text.txt
+
+# ---- Large media / published paper (size + copyright) ----
+*.pdf
+*.JPG
+*.jpg
+*.jpeg
+Screenshot*.png
+Han et al. 2025*.md
+C33FB0C2-*.JPG
+
+# ---- Local bundle ----
+demo_packet_*.zip

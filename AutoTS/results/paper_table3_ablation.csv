@@ -1,0 +1,9 @@
+DataType,Method,MAE(m),RMSE(m),R@1m(%),R@2m(%)
+All,AutoTS w/o MinCut,2.51,3.74,27.11,50.87
+All,AutoTS w/o Weight,2.49,3.72,28.81,49.15
+All,AutoTS-K-Means,2.56,3.82,27.11,47.46
+All,AutoTS-DBSCAN,2.48,3.79,28.81,52.54
+All,AutoTS (ours),2.38,3.42,30.51,54.23
+Sparse*,AutoTS-K-Means*,2.46,3.52,28.81,52.54
+Sparse*,AutoTS-DBSCAN*,2.42,3.48,30.51,52.54
+Sparse*,AutoTS*,2.36,3.37,32.20,54.23

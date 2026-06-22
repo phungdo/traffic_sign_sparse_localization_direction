@@ -1,0 +1,2 @@
+run_id,experiment,timestamp,runtime_s,K_min,l1_lambda,nsal_sigma,uspa_lambda_d,greedy_sensing,exp2_seeds,exp3_seeds,exp3_magnitudes,exp5_trials
+exp1_1782169101,main_table,2026-06-23 05:58:21,15.1,7,2.0,2.5,0.02,gaussian,0-4,0-2,"5,10,20",100

@@ -1,0 +1,5 @@
+Index,Split,SignID,Category,GT_Direction,Pred_Direction,Ablation,AutoTS_Error_m,Ablation_Error_m
+1,train,3,4,1,1,AutoTS w/o MinCut,9.92,9.92
+2,test,2,4,2,1,AutoTS w/o MinCut,0.77,0.77
+3,test,5,15,1,1,AutoTS w/o Weight,0.47,0.47
+4,test,6,4,1,1,AutoTS w/o Weight,3.17,3.17

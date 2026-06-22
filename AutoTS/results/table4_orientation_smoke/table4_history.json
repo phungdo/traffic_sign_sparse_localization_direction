@@ -1,0 +1,90 @@
+{
+  "AutoTS w/ ROI": [
+    {
+      "epoch": 1,
+      "loss": 0.9900050163269043,
+      "accuracy": 87.5,
+      "recall_left": 0.0,
+      "recall_back": 100.0,
+      "recall_right": 0.0,
+      "mrecall": 33.333333333333336
+    }
+  ],
+  "AutoTS w/ ROIS": [
+    {
+      "epoch": 1,
+      "loss": 1.3707104921340942,
+      "accuracy": 87.5,
+      "recall_left": 0.0,
+      "recall_back": 100.0,
+      "recall_right": 0.0,
+      "mrecall": 33.333333333333336
+    }
+  ],
+  "AutoTS w/o SIFT": [
+    {
+      "epoch": 1,
+      "loss": 1.417718768119812,
+      "accuracy": 87.5,
+      "recall_left": 0.0,
+      "recall_back": 100.0,
+      "recall_right": 0.0,
+      "mrecall": 33.333333333333336
+    }
+  ],
+  "AutoTS w/o MImg": [
+    {
+      "epoch": 1,
+      "loss": 1.3725038766860962,
+      "accuracy": 87.5,
+      "recall_left": 0.0,
+      "recall_back": 100.0,
+      "recall_right": 0.0,
+      "mrecall": 33.333333333333336
+    }
+  ],
+  "AutoTS w/ BiLSTMs": [
+    {
+      "epoch": 1,
+      "loss": 1.1727288961410522,
+      "accuracy": 87.5,
+      "recall_left": 0.0,
+      "recall_back": 100.0,
+      "recall_right": 0.0,
+      "mrecall": 33.333333333333336
+    }
+  ],
+  "AutoTS w/ LSTMs": [
+    {
+      "epoch": 1,
+      "loss": 1.2365694046020508,
+      "accuracy": 87.5,
+      "recall_left": 0.0,
+      "recall_back": 100.0,
+      "recall_right": 0.0,
+      "mrecall": 33.333333333333336
+    }
+  ],
+  "AutoTS (ours)": [
+    {
+      "epoch": 1,
+      "loss": 1.4195095300674438,
+      "accuracy": 87.5,
+      "recall_left": 0.0,
+      "recall_back": 100.0,
+      "recall_right": 0.0,
+      "mrecall": 33.333333333333336
+    }
+  ],
+  "AutoTS\u2020": [
+    {
+      "epoch": 1,
+      "loss": 1.4243830442428589,
+      "accuracy": 87.5,
+      "recall_left": 0.0,
+      "recall_back": 100.0,
+      "recall_right": 0.0,
+      "mrecall": 33.333333333333336
+    }
+  ]
+}

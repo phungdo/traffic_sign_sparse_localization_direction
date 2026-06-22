@@ -1,0 +1,28 @@
+{
+  "output": "./results/figure7/figure7_sift_heatmaps.png",
+  "cache": "./results/orientation_cache/test_features.pt",
+  "backward_id": "113",
+  "rightward_id": "288",
+  "backward_original_rows": 11,
+  "rightward_original_rows": 1,
+  "rendered_rows": 12,
+  "feature_dim": 160,
+  "backward_selected_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "rightward_selected_indices": [
+    0
+  ],
+  "backward_padded_rows": 1,
+  "rightward_padded_rows": 11
+}
