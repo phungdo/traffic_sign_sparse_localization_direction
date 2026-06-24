@@ -27,6 +27,7 @@ from orientation_repro_lib import (
     OrientationAblationNet,
 )
 from visualize_figure8 import load_samples, predict_sample
+from map_methods import MAP_METHODS, sign_method_data
 
 
 def frame_strip_b64(sample, img_root, max_frames=4, width=150, quality=62):
@@ -114,9 +115,14 @@ def main():
             "seq_b64": frame_strip_b64(sample, roots[split], args.max_frames),
         }
 
+        # Per-frame points + per-method recovered locations for the popup.
+        md = sign_method_data(points, true_loc, sample.get("frame_ids"))
+        results[key]["points"] = md["points"]
+        results[key]["methods"] = md["methods"]
+
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     with open(args.out, "w") as f:
-        json.dump({"signs": results}, f)
+        json.dump({"signs": results, "map_methods": MAP_METHODS}, f)
     size_mb = os.path.getsize(args.out) / 1e6
     print(f"WROTE {args.out}  signs={len(results)} with_loc={n_ok} no_loc={n_noloc} "
           f"size={size_mb:.1f}MB")

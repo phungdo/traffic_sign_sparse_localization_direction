@@ -119,6 +119,25 @@
   .marker-img.d1 { border:2px solid var(--back); }
   .marker-img.d2 { border:2px solid var(--right); }
 
+  /* Per-method recovery popup controls + on-map detail markers */
+  .mm-select {
+    background:var(--panel, #1a1d2e); color:var(--text, #e8e8f0);
+    border:1px solid var(--border); border-radius:4px;
+    font-size:0.7rem; padding:1px 4px; max-width:160px;
+  }
+  .popup-hint { font-size:0.6rem; color:var(--text-dim); padding:5px 12px 2px; }
+  .pt-dot {
+    width:9px; height:9px; border-radius:50%;
+    background:#6c7cff; border:1.5px solid #fff;
+    box-shadow:0 0 3px rgba(0,0,0,0.6); cursor:pointer;
+  }
+  .pt-dot.pt-out { background:#ff6b9d; }
+  .est-diamond {
+    width:14px; height:14px; background:#ffd93d;
+    border:2px solid #1a1d2e; transform:rotate(45deg);
+    box-shadow:0 0 6px rgba(0,0,0,0.7); cursor:pointer;
+  }
+
   .view-tabs {
     display:flex; gap:4px; margin:10px 0;
   }
@@ -589,6 +608,11 @@ let markers = [];
 let activeFilter = null;
 let SIGN_RESULTS = {};
 const SIGN_RESULTS_URL = 'results/map/map_sign_results.json';
+// Per-method recovery state (populated from map_sign_results.json)
+let MAP_METHODS_ORDER = ['mean','median','geometric_median','dbscan','nsal','l1_sor','omp','cosamp','sp','uspa'];
+let detailMarkers = [];      // per-frame point dots + chosen-method estimate for the open sign
+let CURRENT_SIGN = null;     // sign whose popup is open
+let CURRENT_METHOD = 'nsal'; // method currently shown on the map
 const FIGURE8_DATA_URL = 'results/figure8/figure8_web_data.json';
 const FIGURE8_SATELLITE_TILE = 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}';
 const FIGURE8_ROAD_TILE = 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
@@ -1081,6 +1105,29 @@ function updateStats(filtered) {
   `;
 }
 
+function fmtErr(e) { return (e === null || e === undefined) ? '—' : e.toFixed(2) + ' m'; }
+function methodExtra(mi) {
+  if (mi.fallback) return 'k-guard → geom. median';
+  const n = (mi.outlier_idx || []).length;
+  return n ? `${n} outlier${n > 1 ? 's' : ''} removed` : 'no outliers';
+}
+function methodSection(s, r) {
+  if (!r || !r.methods) return '';
+  const order = MAP_METHODS_ORDER.filter(m => r.methods[m]);
+  if (!order.length) return '';
+  const sel = r.methods['nsal'] ? 'nsal' : order[0];
+  const opts = order.map(m =>
+    `<option value="${m}"${m === sel ? ' selected' : ''}>${r.methods[m].label}</option>`).join('');
+  const mi = r.methods[sel];
+  return `<div class="popup-section">Per-method recovery (pick a method)</div>
+    <div class="popup-row"><span class="lbl">Method</span>
+      <select id="mm-select" class="mm-select" onchange="selectMethod('${s.split}','${s.id}', this.value)">${opts}</select></div>
+    <div class="popup-row"><span class="lbl">Error vs GT</span><span id="mm-error"><b>${fmtErr(mi.error_m)}</b></span></div>
+    <div class="popup-row"><span class="lbl">Estimated GPS</span><span id="mm-gps" style="font-size:0.66rem">${mi.est_lat.toFixed(6)}, ${mi.est_lon.toFixed(6)}</span></div>
+    <div class="popup-row"><span class="lbl">Status</span><span id="mm-extra">${methodExtra(mi)}</span></div>
+    <div class="popup-hint">Map: <span style="color:#6c7cff">&#9679;</span> per-image points, <span style="color:#ff6b9d">&#9679;</span> outliers, <span style="color:#ffd93d">&#9670;</span> this method's estimate.</div>`;
+}
+
 function signPopupHtml(s) {
   const r = SIGN_RESULTS[`${s.split}/${s.id}`];
   const seq = (r && r.seq_b64 && r.seq_b64.length)
@@ -1122,7 +1169,55 @@ function signPopupHtml(s) {
       <div class="popup-row"><span class="lbl">Frames</span><span>${s.frames}</span></div>
       <div class="popup-row"><span class="lbl">GT GPS</span><span style="font-size:0.66rem">${s.lat.toFixed(6)}, ${s.lon.toFixed(6)}</span></div>
       ${estRows}
+      ${methodSection(s, r)}
     </div>`;
+}
+
+function findSign(split, id) {
+  return DATA.find(x => x.split === split && String(x.id) === String(id));
+}
+
+function clearSignDetail() {
+  detailMarkers.forEach(m => m.remove());
+  detailMarkers = [];
+}
+
+// Plot the open sign's per-image points + the chosen method's estimate marker.
+function showSignDetail() {
+  clearSignDetail();
+  if (!map || !HAS_MAPLIBRE || !CURRENT_SIGN) return;
+  const s = CURRENT_SIGN;
+  const r = SIGN_RESULTS[`${s.split}/${s.id}`];
+  if (!r) return;
+  const mi = r.methods ? r.methods[CURRENT_METHOD] : null;
+  const outliers = new Set((mi && mi.outlier_idx) ? mi.outlier_idx : []);
+  (r.points || []).forEach((p, i) => {
+    const el = document.createElement('div');
+    el.className = 'pt-dot' + (outliers.has(i) ? ' pt-out' : '');
+    el.title = `per-image point ${i}` + (p.frame_id ? `\n${p.frame_id}` : '') +
+               (outliers.has(i) ? '\n(flagged outlier)' : '');
+    detailMarkers.push(new maplibregl.Marker({element: el}).setLngLat([p.lon, p.lat]).addTo(map));
+  });
+  if (mi) {
+    const el = document.createElement('div');
+    el.className = 'est-diamond';
+    el.title = `${mi.label}\nestimate · ${fmtErr(mi.error_m)}`;
+    detailMarkers.push(new maplibregl.Marker({element: el}).setLngLat([mi.est_lon, mi.est_lat]).addTo(map));
+  }
+}
+
+// Called from the popup's method dropdown.
+function selectMethod(split, id, method) {
+  CURRENT_METHOD = method;
+  CURRENT_SIGN = findSign(split, id) || CURRENT_SIGN;
+  const r = SIGN_RESULTS[`${split}/${id}`];
+  const mi = (r && r.methods) ? r.methods[method] : null;
+  if (mi) {
+    const e = document.getElementById('mm-error'); if (e) e.innerHTML = `<b>${fmtErr(mi.error_m)}</b>`;
+    const g = document.getElementById('mm-gps'); if (g) g.textContent = `${mi.est_lat.toFixed(6)}, ${mi.est_lon.toFixed(6)}`;
+    const x = document.getElementById('mm-extra'); if (x) x.textContent = methodExtra(mi);
+  }
+  showSignDetail();
 }
 
 function createMarkers(filter) {
@@ -1140,9 +1235,19 @@ function createMarkers(filter) {
     el.src = `data:image/jpeg;base64,${s.b64}`;
     el.title = `${s.cat_name} | ${s.dir_name}`;
 
+    const popup = new maplibregl.Popup({offset: 20, maxWidth: '270px'}).setHTML(signPopupHtml(s));
+    popup.on('open', () => {
+      CURRENT_SIGN = s;
+      CURRENT_METHOD = 'nsal';           // each popup opens on the AutoTS method
+      showSignDetail();
+    });
+    popup.on('close', () => {
+      if (CURRENT_SIGN === s) { clearSignDetail(); CURRENT_SIGN = null; }
+    });
+
     const marker = new maplibregl.Marker({element: el})
       .setLngLat([s.lon, s.lat])
-      .setPopup(new maplibregl.Popup({offset: 20, maxWidth: '270px'}).setHTML(signPopupHtml(s)))
+      .setPopup(popup)
       .addTo(map);
 
     markers.push(marker);
@@ -1155,6 +1260,9 @@ async function loadSignResults() {
     if (!resp.ok) return;
     const payload = await resp.json();
     SIGN_RESULTS = payload.signs || {};
+    if (Array.isArray(payload.map_methods) && payload.map_methods.length) {
+      MAP_METHODS_ORDER = payload.map_methods;
+    }
     // Rebuild markers so popups pick up the enriched data.
     if (map && HAS_MAPLIBRE) createMarkers(activeFilter);
   } catch (e) {
