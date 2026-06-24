@@ -59,6 +59,24 @@
   }
   .ktoggle:hover { border-color:var(--accent); }
   .ktoggle.active { background:#ffd93d; border-color:#ffd93d; color:#111; font-weight:600; }
+  /* Split (train/test/all) filter buttons */
+  .sbtn {
+    background:var(--surface2); border:1px solid var(--border);
+    color:var(--text); padding:3px 8px; border-radius:5px;
+    cursor:pointer; font-size:0.7rem; font-family:inherit; transition:all 0.2s;
+  }
+  .sbtn:hover { border-color:var(--accent); }
+  .sbtn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .filter-label { font-size:0.7rem; color:var(--text-dim); align-self:center; }
+  .loadwarn {
+    margin-top:6px; padding:6px 9px; border-radius:5px;
+    background:rgba(255,107,157,0.15); border:1px solid #ff6b9d;
+    color:#ffb3cd; font-size:0.68rem; line-height:1.4;
+  }
+  .loadwarn code {
+    background:rgba(0,0,0,0.35); padding:0 4px; border-radius:3px;
+    font-size:0.66rem; word-break:break-all;
+  }
 
   .legend {
     position:absolute; bottom:30px; left:12px; z-index:10;
@@ -605,6 +623,13 @@
     <button class="fbtn d2" onclick="filterDir(2)">→ Right</button>
     <button class="ktoggle" id="kbtn" type="button" title="Show only signs with >=7 location points, where the sparse CS methods actually run instead of falling back to the geometric median" onclick="toggleSparse()">&#9670; k&ge;7 only</button>
   </div>
+  <div class="filters map-controls">
+    <span class="filter-label">Split:</span>
+    <button class="sbtn active" id="split-all" type="button" onclick="filterSplit('all')">All</button>
+    <button class="sbtn" id="split-train" type="button" onclick="filterSplit('train')">Train</button>
+    <button class="sbtn" id="split-test" type="button" onclick="filterSplit('test')">Test</button>
+  </div>
+  <div class="loadwarn map-controls" id="loadwarn" style="display:none"></div>
 </div>
 
 <div class="legend">
@@ -627,6 +652,7 @@ let detailMarkers = [];      // per-frame point dots + chosen-method estimate fo
 let CURRENT_SIGN = null;     // sign whose popup is open
 let CURRENT_METHOD = 'nsal'; // method currently shown on the map
 let sparseOnly = false;      // when true, show only signs with k>=7 (sparse CS runs)
+let splitFilter = 'all';     // 'all' | 'train' | 'test'
 const FIGURE8_DATA_URL = 'results/figure8/figure8_web_data.json';
 const FIGURE8_SATELLITE_TILE = 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}';
 const FIGURE8_ROAD_TILE = 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
@@ -1244,6 +1270,7 @@ function createMarkers(filter) {
   markers = [];
 
   let filtered = filter !== null ? DATA.filter(s => s.dir === filter) : DATA;
+  if (splitFilter !== 'all') filtered = filtered.filter(s => s.split === splitFilter);
   if (sparseOnly) filtered = filtered.filter(s => signK(s) >= 7);
   updateStats(filtered);
   if (!map || !HAS_MAPLIBRE) return;
@@ -1273,19 +1300,37 @@ function createMarkers(filter) {
   });
 }
 
+function showLoadWarn(e) {
+  const el = document.getElementById('loadwarn');
+  if (!el) return;
+  el.innerHTML = (location.protocol === 'file:')
+    ? '&#9888; Per-method results cannot load over <b>file://</b> (fetch is blocked). '
+      + 'Serve over HTTP instead:<br><code>python3 -m http.server 8765 --directory AutoTS</code>'
+      + '<br>then open <code>http://127.0.0.1:8765/kitti_ts_map.html</code>'
+    : '&#9888; Could not load results/map/map_sign_results.json ('
+      + ((e && e.message) ? e.message : 'fetch failed') + '). Popups show GT only.';
+  el.style.display = 'block';
+}
+function hideLoadWarn() {
+  const el = document.getElementById('loadwarn');
+  if (el) el.style.display = 'none';
+}
+
 async function loadSignResults() {
   try {
     const resp = await fetch(SIGN_RESULTS_URL, {cache: 'no-store'});
-    if (!resp.ok) return;
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const payload = await resp.json();
     SIGN_RESULTS = payload.signs || {};
     if (Array.isArray(payload.map_methods) && payload.map_methods.length) {
       MAP_METHODS_ORDER = payload.map_methods;
     }
+    hideLoadWarn();
     // Rebuild markers so popups pick up the enriched data.
     if (map && HAS_MAPLIBRE) createMarkers(activeFilter);
   } catch (e) {
     console.warn('Sign results not loaded (popups show GT-only):', e);
+    showLoadWarn(e);
   }
 }
 
@@ -1309,6 +1354,14 @@ function toggleSparse() {
   sparseOnly = !sparseOnly;
   const btn = document.getElementById('kbtn');
   if (btn) btn.classList.toggle('active', sparseOnly);
+  createMarkers(activeFilter);
+}
+function filterSplit(v) {
+  splitFilter = v;
+  ['all', 'train', 'test'].forEach(x => {
+    const b = document.getElementById('split-' + x);
+    if (b) b.classList.toggle('active', x === v);
+  });
   createMarkers(activeFilter);
 }
 
