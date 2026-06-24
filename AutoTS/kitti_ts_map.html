@@ -50,7 +50,16 @@
   .fbtn.d0.active { background:var(--left); border-color:var(--left); }
   .fbtn.d1.active { background:var(--back); border-color:var(--back); color:#111; }
   .fbtn.d2.active { background:var(--right); border-color:var(--right); color:#111; }
-  
+  /* Independent "sparse-ready (k>=7)" toggle (kept separate from .fbtn so the
+     direction filter does not clear its active state). */
+  .ktoggle {
+    background:var(--surface2); border:1px solid var(--border);
+    color:var(--text-dim); padding:3px 8px; border-radius:5px;
+    cursor:pointer; font-size:0.7rem; font-family:inherit; transition:all 0.2s;
+  }
+  .ktoggle:hover { border-color:var(--accent); }
+  .ktoggle.active { background:#ffd93d; border-color:#ffd93d; color:#111; font-weight:600; }
+
   .legend {
     position:absolute; bottom:30px; left:12px; z-index:10;
     background:rgba(15,17,23,0.88); backdrop-filter:blur(12px);
@@ -126,6 +135,9 @@
     font-size:0.7rem; padding:1px 4px; max-width:160px;
   }
   .popup-hint { font-size:0.6rem; color:var(--text-dim); padding:5px 12px 2px; }
+  .k-badge { font-size:0.62rem; font-weight:600; padding:1px 6px; border-radius:3px; }
+  .k-badge.k-ok { background:rgba(255,217,61,0.22); color:#ffd93d; }
+  .k-badge.k-low { background:rgba(255,107,157,0.18); color:#ff6b9d; }
   .pt-dot {
     width:9px; height:9px; border-radius:50%;
     background:#6c7cff; border:1.5px solid #fff;
@@ -591,6 +603,7 @@
     <button class="fbtn d0" onclick="filterDir(0)">← Left</button>
     <button class="fbtn d1" onclick="filterDir(1)">↓ Back</button>
     <button class="fbtn d2" onclick="filterDir(2)">→ Right</button>
+    <button class="ktoggle" id="kbtn" type="button" title="Show only signs with >=7 location points, where the sparse CS methods actually run instead of falling back to the geometric median" onclick="toggleSparse()">&#9670; k&ge;7 only</button>
   </div>
 </div>
 
@@ -613,6 +626,7 @@ let MAP_METHODS_ORDER = ['mean','median','geometric_median','dbscan','nsal','l1_
 let detailMarkers = [];      // per-frame point dots + chosen-method estimate for the open sign
 let CURRENT_SIGN = null;     // sign whose popup is open
 let CURRENT_METHOD = 'nsal'; // method currently shown on the map
+let sparseOnly = false;      // when true, show only signs with k>=7 (sparse CS runs)
 const FIGURE8_DATA_URL = 'results/figure8/figure8_web_data.json';
 const FIGURE8_SATELLITE_TILE = 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}';
 const FIGURE8_ROAD_TILE = 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
@@ -1119,7 +1133,11 @@ function methodSection(s, r) {
   const opts = order.map(m =>
     `<option value="${m}"${m === sel ? ' selected' : ''}>${r.methods[m].label}</option>`).join('');
   const mi = r.methods[sel];
+  const k = (typeof r.n_points === 'number') ? r.n_points : order.length;
+  const engaged = k >= 7;
   return `<div class="popup-section">Per-method recovery (pick a method)</div>
+    <div class="popup-row"><span class="lbl">Sparse status</span>
+      <span class="k-badge ${engaged ? 'k-ok' : 'k-low'}">k=${k} &middot; ${engaged ? 'CS runs' : 'k-guard fallback'}</span></div>
     <div class="popup-row"><span class="lbl">Method</span>
       <select id="mm-select" class="mm-select" onchange="selectMethod('${s.split}','${s.id}', this.value)">${opts}</select></div>
     <div class="popup-row"><span class="lbl">Error vs GT</span><span id="mm-error"><b>${fmtErr(mi.error_m)}</b></span></div>
@@ -1225,7 +1243,8 @@ function createMarkers(filter) {
   markers.forEach(m => m.remove());
   markers = [];
 
-  const filtered = filter !== null ? DATA.filter(s => s.dir === filter) : DATA;
+  let filtered = filter !== null ? DATA.filter(s => s.dir === filter) : DATA;
+  if (sparseOnly) filtered = filtered.filter(s => signK(s) >= 7);
   updateStats(filtered);
   if (!map || !HAS_MAPLIBRE) return;
 
@@ -1281,6 +1300,16 @@ function filterAll() {
   document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
   document.querySelector('.fbtn:first-child').classList.add('active');
   createMarkers(null);
+}
+function signK(s) {
+  const r = SIGN_RESULTS[`${s.split}/${s.id}`];
+  return (r && typeof r.n_points === 'number') ? r.n_points : 0;
+}
+function toggleSparse() {
+  sparseOnly = !sparseOnly;
+  const btn = document.getElementById('kbtn');
+  if (btn) btn.classList.toggle('active', sparseOnly);
+  createMarkers(activeFilter);
 }
 
 function setViewTab(view, updateHash = true) {
