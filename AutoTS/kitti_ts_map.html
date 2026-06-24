@@ -156,6 +156,25 @@
   .k-badge { font-size:0.62rem; font-weight:600; padding:1px 6px; border-radius:3px; }
   .k-badge.k-ok { background:rgba(255,217,61,0.22); color:#ffd93d; }
   .k-badge.k-low { background:rgba(255,107,157,0.18); color:#ff6b9d; }
+  /* Per-method comparison table (replaces the dropdown) */
+  .mm-table { width:100%; border-collapse:collapse; margin:3px 0 2px; }
+  .mm-table th {
+    font-size:0.58rem; color:var(--text-dim); font-weight:600;
+    text-transform:uppercase; letter-spacing:0.03em; padding:2px 6px;
+    text-align:right; border-bottom:1px solid var(--border);
+  }
+  .mm-table th.mm-name { text-align:left; }
+  .mm-table td {
+    font-size:0.7rem; padding:2px 6px; text-align:right;
+    border-bottom:1px solid var(--border);
+  }
+  .mm-table td.mm-name { text-align:left; }
+  .mm-table tr.mm-row { cursor:pointer; }
+  .mm-table tr.mm-row:hover { background:rgba(108,124,255,0.12); }
+  .mm-table tr.mm-row.mm-active { background:rgba(108,124,255,0.30); }
+  .mm-table tr.mm-row.mm-active td { color:#fff; font-weight:600; }
+  .mm-best { color:#4ecdc4; font-weight:700; }
+  .mm-fb { color:#ff6b9d; font-size:0.6rem; }
   .pt-dot {
     width:9px; height:9px; border-radius:50%;
     background:#6c7cff; border:1.5px solid #fff;
@@ -653,6 +672,11 @@ let CURRENT_SIGN = null;     // sign whose popup is open
 let CURRENT_METHOD = 'nsal'; // method currently shown on the map
 let sparseOnly = false;      // when true, show only signs with k>=7 (sparse CS runs)
 let splitFilter = 'all';     // 'all' | 'train' | 'test'
+const METHOD_SHORT = {       // compact labels for the per-method comparison table
+  mean: 'Mean', median: 'Median', geometric_median: 'Geom. median', dbscan: 'DBSCAN',
+  nsal: 'NSAL (AutoTS)', l1_sor: 'L1-SOR', omp: 'OMP', cosamp: 'CoSaMP',
+  sp: 'Subspace P.', uspa: 'USPA',
+};
 const FIGURE8_DATA_URL = 'results/figure8/figure8_web_data.json';
 const FIGURE8_SATELLITE_TILE = 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}';
 const FIGURE8_ROAD_TILE = 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
@@ -1155,21 +1179,30 @@ function methodSection(s, r) {
   if (!r || !r.methods) return '';
   const order = MAP_METHODS_ORDER.filter(m => r.methods[m]);
   if (!order.length) return '';
-  const sel = r.methods['nsal'] ? 'nsal' : order[0];
-  const opts = order.map(m =>
-    `<option value="${m}"${m === sel ? ' selected' : ''}>${r.methods[m].label}</option>`).join('');
-  const mi = r.methods[sel];
   const k = (typeof r.n_points === 'number') ? r.n_points : order.length;
   const engaged = k >= 7;
-  return `<div class="popup-section">Per-method recovery (pick a method)</div>
+  let best = Infinity;
+  order.forEach(m => { const e = r.methods[m].error_m; if (e != null && e < best) best = e; });
+  const rows = order.map(m => {
+    const mi = r.methods[m];
+    const active = (m === 'nsal') ? ' mm-active' : '';
+    const isBest = (mi.error_m != null && mi.error_m === best) ? ' mm-best' : '';
+    const out = (mi.outlier_idx || []).length;
+    const fb = mi.fallback ? ' <span class="mm-fb" title="k-guard fallback to geometric median">fb</span>' : '';
+    const err = (mi.error_m == null) ? '&mdash;' : mi.error_m.toFixed(2);
+    return `<tr class="mm-row${active}" id="mmrow-${m}" onclick="selectMethodRow('${s.split}','${s.id}','${m}')">`
+      + `<td class="mm-name">${METHOD_SHORT[m] || mi.label}</td>`
+      + `<td class="mm-err${isBest}">${err}</td>`
+      + `<td class="mm-out">${out}${fb}</td></tr>`;
+  }).join('');
+  return `<div class="popup-section">Per-method recovery (click a row)</div>
     <div class="popup-row"><span class="lbl">Sparse status</span>
       <span class="k-badge ${engaged ? 'k-ok' : 'k-low'}">k=${k} &middot; ${engaged ? 'CS runs' : 'k-guard fallback'}</span></div>
-    <div class="popup-row"><span class="lbl">Method</span>
-      <select id="mm-select" class="mm-select" onchange="selectMethod('${s.split}','${s.id}', this.value)">${opts}</select></div>
-    <div class="popup-row"><span class="lbl">Error vs GT</span><span id="mm-error"><b>${fmtErr(mi.error_m)}</b></span></div>
-    <div class="popup-row"><span class="lbl">Estimated GPS</span><span id="mm-gps" style="font-size:0.66rem">${mi.est_lat.toFixed(6)}, ${mi.est_lon.toFixed(6)}</span></div>
-    <div class="popup-row"><span class="lbl">Status</span><span id="mm-extra">${methodExtra(mi)}</span></div>
-    <div class="popup-hint">Map: <span style="color:#6c7cff">&#9679;</span> per-image points, <span style="color:#ff6b9d">&#9679;</span> outliers, <span style="color:#ffd93d">&#9670;</span> this method's estimate.</div>`;
+    <table class="mm-table">
+      <thead><tr><th class="mm-name">Method</th><th>Err (m)</th><th>Out</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="popup-hint">Click a row to plot it. Map: <span style="color:#6c7cff">&#9679;</span> points, <span style="color:#ff6b9d">&#9679;</span> outliers, <span style="color:#ffd93d">&#9670;</span> estimate. <span class="mm-best">Teal</span> = lowest error.</div>`;
 }
 
 function signPopupHtml(s) {
@@ -1251,16 +1284,12 @@ function showSignDetail() {
 }
 
 // Called from the popup's method dropdown.
-function selectMethod(split, id, method) {
+function selectMethodRow(split, id, method) {
   CURRENT_METHOD = method;
   CURRENT_SIGN = findSign(split, id) || CURRENT_SIGN;
-  const r = SIGN_RESULTS[`${split}/${id}`];
-  const mi = (r && r.methods) ? r.methods[method] : null;
-  if (mi) {
-    const e = document.getElementById('mm-error'); if (e) e.innerHTML = `<b>${fmtErr(mi.error_m)}</b>`;
-    const g = document.getElementById('mm-gps'); if (g) g.textContent = `${mi.est_lat.toFixed(6)}, ${mi.est_lon.toFixed(6)}`;
-    const x = document.getElementById('mm-extra'); if (x) x.textContent = methodExtra(mi);
-  }
+  document.querySelectorAll('.mm-table tr.mm-row').forEach(tr => tr.classList.remove('mm-active'));
+  const row = document.getElementById('mmrow-' + method);
+  if (row) row.classList.add('mm-active');
   showSignDetail();
 }
 
@@ -1281,11 +1310,10 @@ function createMarkers(filter) {
     el.src = `data:image/jpeg;base64,${s.b64}`;
     el.title = `${s.cat_name} | ${s.dir_name}`;
 
-    const popup = new maplibregl.Popup({offset: 20, maxWidth: '270px'}).setHTML(signPopupHtml(s));
+    const popup = new maplibregl.Popup({offset: 20, maxWidth: '300px'}).setHTML(signPopupHtml(s));
     popup.on('open', () => {
       CURRENT_SIGN = s;
-      CURRENT_METHOD = 'nsal';           // each popup opens on the AutoTS method
-      showSignDetail();
+      selectMethodRow(s.split, String(s.id), 'nsal');  // default to AutoTS: highlight row + plot
     });
     popup.on('close', () => {
       if (CURRENT_SIGN === s) { clearSignDetail(); CURRENT_SIGN = null; }
