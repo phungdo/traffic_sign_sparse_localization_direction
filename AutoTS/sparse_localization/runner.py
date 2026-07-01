@@ -20,8 +20,8 @@ from .data import center_to_latlon
 PER_SIGN_FIELDS = [
     "sign_id", "method", "k_used", "seed",
     "est_lat", "est_lon", "gt_lat", "gt_lon", "err_m", "hit_1m", "hit_2m",
-    "n_outliers_detected", "outlier_idx", "residual_norm", "n_iter",
-    "assumed_s", "fallback_triggered", "runtime_ms",
+    "n_outliers_detected", "outlier_idx", "outlier_frames", "residual_norm",
+    "n_iter", "assumed_s", "fallback_triggered", "runtime_ms",
 ]
 
 
@@ -38,6 +38,10 @@ def eval_record(method, rec, coords=None, meta=None, seed=0, **kwargs):
     pred = center_to_latlon(res.center)
     err = metrics.error_m(pred, rec.gt)
     scores = res.outlier_scores
+    # Map recovered observation indices back to their source image/frame ids.
+    frame_ids = meta.get("frame_id") if isinstance(meta, dict) else None
+    outlier_frames = "|".join(str(frame_ids[i]) for i in res.outlier_idx) \
+        if frame_ids is not None else ""
     row = {
         "sign_id": rec.sign_id,
         "method": method,
@@ -49,6 +53,7 @@ def eval_record(method, rec, coords=None, meta=None, seed=0, **kwargs):
         "hit_1m": int(err < 1.0), "hit_2m": int(err < 2.0),
         "n_outliers_detected": len(res.outlier_idx),
         "outlier_idx": "|".join(map(str, res.outlier_idx)),
+        "outlier_frames": outlier_frames,
         "residual_norm": "" if res.residual_norm is None else round(res.residual_norm, 6),
         "n_iter": "" if res.n_iter is None else res.n_iter,
         "assumed_s": "" if res.assumed_s is None else res.assumed_s,

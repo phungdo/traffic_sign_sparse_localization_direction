@@ -25,8 +25,8 @@ ROOT = "./results/cs"
 FIG = os.path.join(ROOT, "figures")
 K_ORDER = ["2", "3", "5", "10", "20", "all"]
 METHOD_ORDER = ["mean", "median", "geometric_median", "dbscan", "nsal",
-                "l1_sor", "omp", "cosamp", "sp", "uspa"]
-SPARSE = ["l1_sor", "omp", "cosamp", "sp"]
+                "src", "l1_sor", "omp", "cosamp", "sp", "uspa"]
+SPARSE = ["src", "l1_sor", "omp", "cosamp", "sp"]
 
 
 def _exists(*parts):
@@ -134,6 +134,31 @@ def exp3(md):
     ax.legend(ncol=2, fontsize=8); ax.grid(alpha=0.3)
     fig.tight_layout(); fig.savefig(os.path.join(FIG, "exp3_mae_vs_ratio.png"), dpi=150)
     plt.close(fig)
+
+    # Recall vs ratio: R@1m and R@2m side by side (classmate ask #2)
+    if {"r1m_mean", "r2m_mean"}.issubset(sub.columns):
+        r2piv = sub.pivot(index="ratio", columns="method", values="r2m_mean").reindex(ratios)
+        rrows = [[f"{r:.0%}"] + [f"{r2piv.loc[r, m]:.1f}" for m in methods] for r in ratios]
+        md.append(f"### Experiment 3 — Recall@2m vs outlier ratio (%, magnitude {headline:.0f} m)\n")
+        md.append(_md_table(["Outlier ratio"] + methods, rrows))
+        md.append("")
+
+        fig, axes = plt.subplots(1, 2, figsize=(13, 5), sharex=True)
+        for col, ax, title in [("r1m_mean", axes[0], "R@1m"),
+                               ("r2m_mean", axes[1], "R@2m")]:
+            pv = sub.pivot(index="ratio", columns="method", values=col).reindex(ratios)
+            for m in methods:
+                ax.plot(ratios, [pv.loc[r, m] for r in ratios], marker="o", label=m,
+                        linewidth=2 if m in SPARSE + ["mean", "nsal"] else 1,
+                        alpha=1.0 if m in SPARSE + ["mean", "nsal"] else 0.5)
+            ax.set_xlabel("outlier ratio"); ax.set_ylabel(f"{title} (%)")
+            ax.set_title(f"{title} vs outlier ratio ({headline:.0f} m)")
+            ax.grid(alpha=0.3)
+        axes[1].legend(ncol=2, fontsize=8)
+        fig.suptitle("Experiment 3 — recall vs outlier ratio")
+        fig.tight_layout()
+        fig.savefig(os.path.join(FIG, "exp3_recall_vs_ratio.png"), dpi=150)
+        plt.close(fig)
 
     # Heatmaps of MAE per magnitude
     mags = sorted(df["magnitude"].unique())

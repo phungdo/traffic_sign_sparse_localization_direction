@@ -206,6 +206,48 @@ def l1_sor(coords: np.ndarray, lam: float = 2.0, n_iter: int = 100,
 
 
 # ---------------------------------------------------------------------------
+# SRC baseline (HW6 y = Ax + e, element-wise L1)
+# ---------------------------------------------------------------------------
+
+def src(coords: np.ndarray, alpha: float = 2.0, n_iter: int = 100,
+        tol: float = 1e-6) -> AggResult:
+    """Plain SRC baseline, the HW6 ``y = Ax + e`` model (proposal section 4.5).
+
+        min_{l, e_i}  1/2 sum_i ||p_i - l - e_i||^2 + alpha sum_i ||e_i||_1
+
+    This is the localization analogue of HW6's extended dictionary B = [A, I]:
+    the shared location ``l`` plays the role of the dense face code ``Ax`` and
+    each observation error ``e_i`` is the sparse part recovered with an
+    *element-wise* L1 penalty (scalar soft-threshold, prox of ``||.||_1``) --
+    exactly HW6's LASSO on ``e``. The only difference from :func:`l1_sor` is the
+    penalty geometry: ``src`` shrinks each coordinate independently (``||e_i||_1``),
+    while ``l1_sor`` uses a group-L2 penalty ``||e_i||_2`` that keeps or drops a
+    whole 2D observation at once. Same alternating minimization as ``l1_sor``.
+    """
+    p = np.asarray(coords, float)
+    offset = p.mean(axis=0)
+    p = p - offset                                    # center for stability
+
+    l = geometric_median(p).center
+    e = np.zeros_like(p)
+    it = 0
+    for it in range(1, n_iter + 1):
+        r = p - l                                     # residuals (k, 2)
+        e = np.sign(r) * np.maximum(np.abs(r) - alpha, 0.0)   # scalar soft-threshold
+        l_new = (p - e).mean(axis=0)
+        if np.linalg.norm(l_new - l) < tol:
+            l = l_new
+            break
+        l = l_new
+
+    scores = np.linalg.norm(e, axis=1)
+    outliers = np.where(scores > 1e-9)[0].tolist()
+    resid = float(np.linalg.norm(p - l - e))
+    return AggResult(center=l + offset, outlier_idx=outliers,
+                     outlier_scores=scores, residual_norm=resid, n_iter=it)
+
+
+# ---------------------------------------------------------------------------
 # CS greedy: OMP / CoSaMP / SP via annihilator reduction  z = F y
 # ---------------------------------------------------------------------------
 
@@ -377,7 +419,7 @@ def uspa(coords: np.ndarray, meta: Optional[dict] = None,
 # k-guard dispatch (section 4.10)
 # ---------------------------------------------------------------------------
 
-SPARSE_METHODS = {"l1_sor", "omp", "cosamp", "sp"}
+SPARSE_METHODS = {"src", "l1_sor", "omp", "cosamp", "sp"}
 
 
 def aggregate(method: str, coords: np.ndarray, meta: Optional[dict] = None,
@@ -410,6 +452,8 @@ def aggregate(method: str, coords: np.ndarray, meta: Optional[dict] = None,
         return nsal(coords, **_filter(kwargs, ("sigma",)))
     if method == "uspa":
         return uspa(coords, meta, **_filter(kwargs, ("variant", "sigma", "lambda_d")))
+    if method == "src":
+        return src(coords, **_filter(kwargs, ("alpha", "n_iter", "tol")))
     if method == "l1_sor":
         return l1_sor(coords, **_filter(kwargs, ("lam", "n_iter", "tol")))
     if method in ("omp", "cosamp", "sp"):
@@ -426,5 +470,5 @@ def _filter(kwargs: dict, allowed) -> dict:
 
 ALL_METHODS = [
     "mean", "median", "geometric_median", "kmeans", "dbscan",
-    "nsal", "l1_sor", "omp", "cosamp", "sp", "uspa",
+    "nsal", "src", "l1_sor", "omp", "cosamp", "sp", "uspa",
 ]
