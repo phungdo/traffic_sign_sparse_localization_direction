@@ -15,6 +15,7 @@ alongside the group-sparse and greedy recovery methods for comparison.
 | You want | Open |
 |---|---|
 | **Latest (2026-07-01): SRC baseline, recall-vs-outlier curves, outlier logging** | `2026_07_01_hw6_src_baseline_readme.md` |
+| The whole-repo **code → algorithm → result map** (diagrams, pseudocode, per-file traceability) | `2026_06_24_code_algorithm_result_map.md` |
 | The team handoff (TL;DR, talking points, honesty notes) | `2026_06_23_sparse_localization_readme.md` |
 | The CS module reference (methods, commands) | `AutoTS/sparse_localization/README.md` |
 | Filled result tables | `AutoTS/results/cs/report_tables.md` |
