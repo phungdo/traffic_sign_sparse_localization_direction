@@ -8,7 +8,8 @@ return:
 
     points_latlon : list[[lat, lon]]              raw location points
     coords        : np.ndarray (k, 2)             projected metric coordinates
-    meta          : {"depth": (k,), "area": (k,)} reliability cues for USPA
+    meta          : {"depth": (k,), "area": (k,),  reliability cues for USPA +
+                     "frame_id": (k,)}             source image id per observation
     gt            : [lat, lon]                     ground-truth sign location
 
 ``depth_mode`` selects the AutoTS point source ('planedepth', default) or the
@@ -50,7 +51,7 @@ def _points_with_meta(sign_data, boxes, depth_mode, img_depth):
     if not image_yaws or not boxes:
         return [], [], []
 
-    pts, depths, areas = [], [], []
+    pts, depths, areas, frame_ids = [], [], [], []
     for obj_id, box in boxes.items():
         if depth_mode == "planedepth":
             depth_map = img_depth.get(obj_id) if img_depth else None
@@ -74,7 +75,8 @@ def _points_with_meta(sign_data, boxes, depth_mode, img_depth):
         pts.append([lat_, lng_])
         depths.append(float(depth))
         areas.append(float((box[2] - box[0]) * (box[3] - box[1])))
-    return pts, depths, areas
+        frame_ids.append(str(obj_id))
+    return pts, depths, areas, frame_ids
 
 
 def load_records(depth_mode: str = "planedepth", min_points: int = 1):
@@ -106,7 +108,8 @@ def load_records(depth_mode: str = "planedepth", min_points: int = 1):
         if not boxes:
             continue
 
-        pts, depths, areas = _points_with_meta(sign_data, boxes, depth_mode, img_depth)
+        pts, depths, areas, frame_ids = _points_with_meta(
+            sign_data, boxes, depth_mode, img_depth)
         if len(pts) < min_points:
             continue
 
@@ -116,7 +119,8 @@ def load_records(depth_mode: str = "planedepth", min_points: int = 1):
             sign_id=sign_id,
             points_latlon=pts,
             coords=coords,
-            meta={"depth": np.array(depths), "area": np.array(areas)},
+            meta={"depth": np.array(depths), "area": np.array(areas),
+                  "frame_id": np.array(frame_ids)},
             gt=list(gt),
         ))
     return records

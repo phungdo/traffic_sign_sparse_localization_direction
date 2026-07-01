@@ -21,11 +21,16 @@ Table II. As a check, `nsal` here reproduces the Table II AutoTS MAE (2.36 m).
 |---|---|---|
 | Baselines | `mean`, `median`, `geometric_median`, `kmeans`, `dbscan` | classic robust / cluster centers |
 | Paper | `nsal` | Gaussian affinity + MinCut + degree-weighted center |
+| SRC (HW6) | `src` | `min ½‖p−l−e‖² + α‖e‖₁` element-wise L1 — the plain HW6 `y = Ax + e` baseline |
 | CS convex | `l1_sor` | `min ½‖p−l−e‖² + λ‖e‖₂` group-sparse, alternating min + group soft-threshold |
 | CS greedy | `omp`, `cosamp`, `sp` | annihilator reduction `z = Fy`, block greedy pursuit, Random-Gaussian sensing |
 | Proposed | `uspa` | NSAL degree weight × reliability `q_i` (depth/area/confidence) |
 
-**k-guard (§4.10):** the sparse methods (`l1_sor/omp/cosamp/sp`) recover only
+`src` is the direct COMP5340-HW6 comparison point: same sparse-error model as
+`l1_sor` but with an element-wise L1 penalty (each coordinate shrunk on its own)
+instead of the group-L2 penalty that keeps or drops a whole 2D observation.
+
+**k-guard (§4.10):** the sparse methods (`src/l1_sor/omp/cosamp/sp`) recover only
 when `k ≥ K_MIN = 7`; below that they fall back to the geometric median and set
 `fallback_triggered`. Greedy sparsity is capped at `⌊(k−1)/2⌋`.
 
@@ -60,7 +65,8 @@ python -m sparse_localization.run_all 1 4 5    # a subset
 | `exp1/summary_exp1.csv` | aggregate | MAE/RMSE/R@1m/R@2m + fallback_rate per method |
 | `exp1/per_sign_<method>.csv` | per-sign | est/gt/err, outlier support+scores, residual, fallback, runtime |
 | `exp2/summary_exp2.csv`, `exp2/mae_table_exp2.csv` | aggregate | MAE mean±std by `(method, k)` |
-| `exp3/summary_exp3.csv`, `exp3/mae_table_exp3.csv` | aggregate | MAE + outlier-detection P/R by `(magnitude, ratio, method)` |
+| `exp3/summary_exp3.csv`, `exp3/mae_table_exp3.csv` | aggregate | MAE + R@1m/R@2m + outlier-detection P/R by `(magnitude, ratio, method)` |
+| `exp3/per_sign_outliers_<method>.csv` | per-sign | injected vs dropped outlier count + frame ids per sign (headline magnitude, seed 0) |
 | `exp4/summary_exp4.csv` | aggregate | metrics per reliability cue |
 | `exp5/summary_exp5.csv`, `exp5/phase_<method>.csv` | aggregate | exact-recovery / support P-R / `l_err` by `(m, s)` |
 | `runs.csv` | per-run | run id, timestamp, runtime, hyperparameters |

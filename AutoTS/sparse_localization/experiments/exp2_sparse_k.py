@@ -26,7 +26,7 @@ from ..runner import eval_record
 OUT = "./results/cs/exp2"
 K_VALUES = [2, 3, 5, 10, 20, "all"]
 METHODS = ["mean", "median", "geometric_median", "dbscan", "nsal",
-           "l1_sor", "omp", "cosamp", "sp", "uspa"]
+           "src", "l1_sor", "omp", "cosamp", "sp", "uspa"]
 SEEDS = [0, 1, 2, 3, 4]
 
 
