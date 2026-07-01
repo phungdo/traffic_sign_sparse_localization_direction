@@ -5,10 +5,16 @@ COMP5340 project. We reproduce the localization stage of AutoTS (Han et al.
 from noisy Vision-GPS observations. The compressed-sensing contribution lives in
 `AutoTS/sparse_localization/`.
 
+Our per-sign model `p_i = l_s + e_i + eps_i` is the same `y = Ax + e` sparse-error
+form as **HW6's SRC**: the shared location `l_s` is the signal and each bad frame
+`e_i` is a sparse gross error. A plain HW6-style SRC baseline (`src`) is included
+alongside the group-sparse and greedy recovery methods for comparison.
+
 ## Where to start
 
 | You want | Open |
 |---|---|
+| **Latest (2026-07-01): SRC baseline, recall-vs-outlier curves, outlier logging** | `2026_07_01_hw6_src_baseline_readme.md` |
 | The team handoff (TL;DR, talking points, honesty notes) | `2026_06_23_sparse_localization_readme.md` |
 | The CS module reference (methods, commands) | `AutoTS/sparse_localization/README.md` |
 | Filled result tables | `AutoTS/results/cs/report_tables.md` |
